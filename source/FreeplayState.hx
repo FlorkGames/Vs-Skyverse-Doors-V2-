@@ -311,7 +311,7 @@ class FreeplayState extends MusicBeatState
 					changeDiff();
 				}
 			}
-                        if (virtualPad.buttonC.justPressed)
+                        if (virtualPad.buttonV.justPressed)
         {
             PlayState.SONG = Song.loadFromJson('song-name', 'song-name');
             FlxG.sound.play(Paths.sound('confirmMenu'));
