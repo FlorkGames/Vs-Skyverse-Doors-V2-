@@ -311,7 +311,15 @@ class FreeplayState extends MusicBeatState
 					changeDiff();
 				}
 			}
-
+                        if (virtualPad.buttonC.justPressed)
+        {
+            PlayState.SONG = Song.loadFromJson('song-name', 'song-name');
+            FlxG.sound.play(Paths.sound('confirmMenu'));
+            new FlxTimer().start(0.3, function(tmr:FlxTimer)
+            {
+                LoadingState.loadAndSwitchState(new PlayState());
+            });
+        }
 			if(FlxG.mouse.wheel != 0)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'), 0.2);
