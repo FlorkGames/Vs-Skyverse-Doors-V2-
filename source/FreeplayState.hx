@@ -209,7 +209,7 @@ class FreeplayState extends MusicBeatState
 		add(text);
 
 		#if android
-		addVirtualPad(LEFT_FULL, A_B_C_X_Y);
+		addVirtualPad(LEFT_FULL, A_B_C_X_Y_V);
 		#end
 
 		super.create();
@@ -282,7 +282,7 @@ class FreeplayState extends MusicBeatState
 		var accepted = controls.ACCEPT;
 		var space = FlxG.keys.justPressed.SPACE #if android || virtualPad.buttonX.justPressed #end;
 		var ctrl = FlxG.keys.justPressed.CONTROL #if android || virtualPad.buttonC.justPressed #end;
-
+                var W FlxG.keys.justPressed.W  #if android || virtualPad.buttonV.justPressed #end;
 		var shiftMult:Int = 1;
 		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
 
